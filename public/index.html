@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Ekoulé Maneng Charly Karl">
+        <meta name="description" content="An Exercise Tracker Microservice">
+        <title>Exercise-Tracker Microservice</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Trackex</h1>
+        <p>an exercise tracker microservice</p>
+        <hr>
+        <main>
+            <form action="/api/exercise/new-user" method="POST">
+                <h2>Register a new user</h2>
+                <input type="text" name="username" placeholder="username" required>
+                <button type="submit">Submit</button>
+            </form>
+            <hr>
+            <form action="/api/exercise/add" method="POST">
+                <h2>Add exercises</h2>
+                <input type="text" name="userId" placeholder="userId*" required>
+                <input type="text" name="description" placeholder="description*" required>
+                <input type="number" name="duration" placeholder="duration* (mins.)" required>
+                <input type="date" name="date" placeholder="date (yyyy-mm-dd)">
+                <button type="submit">Submit</button>
+            </form>
+            <hr>
+            <form action="/api/exercise/log" method="GET">
+                <h2>Get users's exercise log</h2>
+                <input type="text" name="userId" placeholder="userId*" required>
+                <label for="from">From:</label>
+                <input type="date" id="from" name="from" placeholder="from">
+                <label for="to">To:</label>
+                <input type="date" id="to" name="to" placeholder="to">
+                <input type="number" name="limit" min="1" placeholder="limit">
+                <button type="submit">Submit</button>
+            </form>
+            <hr>
+            <div id="getAllUsers">
+                <h2>Get an array of all users</h2>
+                <button><a href="/api/exercise/users">Get all users</a></button>
+            </div>
+        </main>
+    </body>
+</html>
